@@ -8,6 +8,9 @@ namespace SpendBitcoin
 {
     class Program
     {
+//          private key L1qVDci614EoauxwWPiWhiHps3mbUnu54Q4ckGFFqDkLBAF66E8H
+//          address 1BpfG5CPYY4caubagUZkMqW3LnKQiUJvSB
+
         static void Main(string[] args)
         {
             var bitcoinPrivateKey = new BitcoinSecret("L1qVDci614EoauxwWPiWhiHps3mbUnu54Q4ckGFFqDkLBAF66E8H");
@@ -17,7 +20,7 @@ namespace SpendBitcoin
 
             var client = new QBitNinjaClient(Network.Main);
             var balance = client.GetBalance(address).Result;
-            var total = balance.Operations.First().Amount.ToDecimal(MoneyUnit.BTC);
+            var total = balance.Operations.Sum(s => s.Amount.ToDecimal(MoneyUnit.BTC));
             Console.WriteLine("Balance: " + total);
 
 
@@ -39,10 +42,10 @@ namespace SpendBitcoin
 
             var bitXAddress = new BitcoinPubKeyAddress("1Kp5yQxpjVzDosM3qzWZhgjq77d7PwZh14");
 
-            var bitXAmount = new Money(0.002m, MoneyUnit.BTC);
-            var minerFee = new Money(0.001m, MoneyUnit.BTC);
-            var changeBackAmount = bitXAmount - minerFee;
-
+            var bitXAmount = new Money(0.001m, MoneyUnit.BTC);
+            var minerFee = new Money(0.0005m, MoneyUnit.BTC);
+            var txInAmount = balance.Operations.First().ReceivedCoins[(int)outPointToSpend.N].TxOut.Value;
+            var changeBackAmount = txInAmount - bitXAmount - minerFee;
 
             TxOut bitXTxOut = new TxOut {
                 ScriptPubKey = bitXAddress.ScriptPubKey,
