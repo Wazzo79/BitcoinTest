@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateBitcoinAddress", "Bit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryTransaction", "QueryTransaction\QueryTransaction.csproj", "{0507FDA4-4B1A-40D1-92F5-1844324A27C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpendBitcoin", "SpendBitcoin\SpendBitcoin.csproj", "{BB5A845E-AEB5-449D-AD39-A1F5BD85ED74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetTransactions", "GetTransactions\GetTransactions.csproj", "{AC2D441C-C7E1-495B-83C5-E9BF80E133D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{0507FDA4-4B1A-40D1-92F5-1844324A27C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0507FDA4-4B1A-40D1-92F5-1844324A27C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0507FDA4-4B1A-40D1-92F5-1844324A27C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5A845E-AEB5-449D-AD39-A1F5BD85ED74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5A845E-AEB5-449D-AD39-A1F5BD85ED74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5A845E-AEB5-449D-AD39-A1F5BD85ED74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5A845E-AEB5-449D-AD39-A1F5BD85ED74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC2D441C-C7E1-495B-83C5-E9BF80E133D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC2D441C-C7E1-495B-83C5-E9BF80E133D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC2D441C-C7E1-495B-83C5-E9BF80E133D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC2D441C-C7E1-495B-83C5-E9BF80E133D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
